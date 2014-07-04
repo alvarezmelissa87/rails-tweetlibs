@@ -18,3 +18,9 @@ a {
   text-decoration: none;
   text-align: center;
 }
+
+label {
+  font-size: 1.20em;
+}
+
+
