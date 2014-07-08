@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
   root :to => 'story#index'
-  post '/', :to => 'story#show'
-  get '/story', :to => 'story#show'
+  # post '/', :to => 'story#show'
+  # get '/story', :to => 'story#show'
+
+  resources :stories, only: [:index, :show]
+    resources :tweets, only: [:index, :show]
 
 end
