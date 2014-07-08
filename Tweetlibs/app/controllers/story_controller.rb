@@ -4,6 +4,7 @@ class StoryController < ApplicationController
   include TwitterApi
 
   def index
+    @stories = Story.all
   end
 
   def show
