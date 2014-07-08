@@ -4,7 +4,8 @@ class StoryController < ApplicationController
   end
 
   def show
-    @chosen_story = Story.find(1)
+    genre = params["chosen_genre"].capitalize
+    @chosen_story = Story.find_by_genre(genre)
     @first_tweets = params[:user_name1]
     @second_tweets = params[:user_name2]
   end
