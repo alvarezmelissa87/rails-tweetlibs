@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
-  root :to => 'welcome#index'
+  root :to => 'story#index'
   post '/', :to => 'story#show'
   get '/story', :to => 'story#show'
   # get 'graduates/search', :to => 'graduates#search'
