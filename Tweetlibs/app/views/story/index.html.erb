@@ -5,22 +5,8 @@
     <h2>Now you can! Just choose a story and two handles and watch the tweets become dialogue!</h2>
   </div>
   <div class="bottom">
-    <div class="story">
-      <h3>Choose a story genre:</h3>
-       <form action="/" method="post">
-        <label for="chosen_genre">Enter the genre of story you would like:</label>
-        <h4>Horror, SciFi, or Romance</h4>
-        <input type="text" name="chosen_genre" placeholder="Enter genre"><br>
-    </div>
-    <div class="handles">
-      <h3>Then, enter the Twitter handle for the people whose tweets you want as the dialogue!</h3>
-      <form action="/" method="post">
-        <label for="user_name1">Twitter handle for the first character:</label>
-        <input type="text" name="user_name1"><br>
-        <label for="user_name2">Twitter handle for the second character:</label>
-        <input type="text" name="user_name2"><br>
-        <input type="submit" value="Make my story!">
-      </form>
-    </div>
+    <% @stories.each do |story| %>
+      <%= link_to story.genre, story_tweet_index_path(story) %>
+    <% end %>
   </div>
 </div>
