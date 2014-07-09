@@ -9,7 +9,7 @@ class StoryController < ApplicationController
 
   def create
     @story = Story.create(story_params)
-    @story.original_story_id = Original_story.find_by_genre(@story.genre)
+    @story.update_attributes(original_story_id: Original_story.find_by_genre(@story.genre).id)
     redirect_to story_tweet_index_path(@story)
   end
 
