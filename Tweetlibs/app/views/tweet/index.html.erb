@@ -1,1 +1,9 @@
-<%= form_for @tweet %>
+<h3>Please enter 2 Twitter Handles</h3>
+<%= form_for @tweet, url: {action: "create"} do |f| %>
+  <%= f.label 'Twitter Handle 1' %>
+  <%= f.text_field :twitter_name1 %>
+  <%= f.label 'Twitter Handle 2' %>
+  <%= f.text_field :twitter_name2 %>
+  <%= f.hidden_field :story_id, :value => params[:story_id] %> 
+  <%= f.submit %>
+<% end %>
