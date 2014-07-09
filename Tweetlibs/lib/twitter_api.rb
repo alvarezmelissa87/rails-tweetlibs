@@ -3,6 +3,8 @@ module TwitterApi
 
 
   def get_tweets(twittername)
+    p '**************'
+    p twittername
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['CONSUMER_KEY']
       config.consumer_secret     = ENV['CONSUMER_SECRET']
@@ -22,7 +24,7 @@ module TwitterApi
       strings << punc_removed if punc_removed.length > 2
     end
 
-    strings
+    p strings
   end
 end
 
