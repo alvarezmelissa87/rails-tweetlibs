@@ -4,7 +4,13 @@ class StoryController < ApplicationController
   include TwitterApi
 
   def index
-    @stories = Story.all
+    @story = Story.new
+  end
+
+  def create
+    @story = Story.create(story_params)
+    @story.original_story_id = Original_story.find_by_genre(@story.genre)
+    redirect_to story_tweet_index_path(@story)
   end
 
   def show
@@ -12,5 +18,11 @@ class StoryController < ApplicationController
     @chosen_story = Story.find_by_genre(genre)
     @first_tweets = get_tweets(params["user_name1"], 9)
     @second_tweets = get_tweets(params["user_name2"], 9)
+  end
+
+  private
+
+  def story_params
+    params.require(:story).permit(:genre)
   end
 end

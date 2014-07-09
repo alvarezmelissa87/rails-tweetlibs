@@ -5,8 +5,14 @@
     <h2>Now you can! Just choose a story and two handles and watch the tweets become dialogue!</h2>
   </div>
   <div class="bottom">
-    <% @stories.each do |story| %>
-      <%= link_to story.genre, story_tweet_index_path(story) %>
+    <%= form_for :story, url: {action: "create"} do |f| %>
+    <%= f.label "Science Fiction" %>
+    <%= f.radio_button :genre, "Science Fiction" %>
+    <%= f.label "Romance" %>
+    <%= f.radio_button :genre, "Romance" %>
+    <%= f.label "Horror" %>
+    <%= f.radio_button :genre, "Horror" %>
+    <%= f.submit %>
     <% end %>
   </div>
 </div>

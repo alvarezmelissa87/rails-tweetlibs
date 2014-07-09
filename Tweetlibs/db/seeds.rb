@@ -13,7 +13,7 @@ def read_in_story_file(file_path) #file_path should be a string
   p title = story_array[0].chomp
   p genre = story_array[1].chomp
   p story = story_array.slice(3,story_array.length)
-  Story.create(:title => title, :genre => genre, :content => story.join(""))
+  Original_story.create(:title => title, :genre => genre, :content => story.join(""))
 end
 
 read_in_story_file("/Users/stupo/ruby/rails-tweetlibs/Tweetlibs/db/horror_story.txt")

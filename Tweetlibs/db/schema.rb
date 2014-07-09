@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140708221235) do
+ActiveRecord::Schema.define(version: 20140708235927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "stories", force: true do |t|
+  create_table "original_stories", force: true do |t|
     t.string   "title"
     t.string   "genre"
     t.text     "content"
@@ -24,10 +24,23 @@ ActiveRecord::Schema.define(version: 20140708221235) do
     t.datetime "updated_at"
   end
 
+  create_table "stories", force: true do |t|
+    t.integer  "original_story_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "genre"
+  end
+
   create_table "tweets", force: true do |t|
-    t.string "twitter_name"
-    t.string "tweets",          array: true
-    t.string "selected_tweets", array: true
+    t.string   "twitter_name1"
+    t.string   "twitter_name2"
+    t.string   "tweet_array1",     array: true
+    t.string   "tweet_array2",     array: true
+    t.string   "selected_tweets1", array: true
+    t.string   "selected_tweets2", array: true
+    t.integer  "story_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
