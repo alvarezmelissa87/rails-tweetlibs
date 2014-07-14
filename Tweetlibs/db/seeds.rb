@@ -16,6 +16,6 @@ def read_in_story_file(file_path) #file_path should be a string
   Original_story.create(:title => title, :genre => genre, :content => story.join(""))
 end
 
-read_in_story_file("/Users/Melissa/Desktop/rails/rails-tweetlibs/Tweetlibs/db/horror_story.txt")
+read_in_story_file("/Users/Melissa/Desktop/rails/rails-tweetlibs/Tweetlibs/db/horror_story.html.erb")
 read_in_story_file('/Users/Melissa/Desktop/rails/rails-tweetlibs/Tweetlibs/db/romance.txt')
 read_in_story_file('/Users/Melissa/Desktop/rails/rails-tweetlibs/Tweetlibs/db/spaceopera1.txt')
