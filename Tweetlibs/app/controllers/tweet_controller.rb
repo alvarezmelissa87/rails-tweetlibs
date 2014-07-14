@@ -25,6 +25,8 @@ class TweetController < ApplicationController
   end
 
   def update
+    @tweet = Tweet.find(params[:id]).update_attributes(selected_tweets1: params[:selected_tweets1], selected_tweets2: params[:selected_tweets2])
+    redirect_to story_path(Story.find(params[:story_id]))
   end
 
   private

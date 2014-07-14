@@ -14,10 +14,8 @@ class StoryController < ApplicationController
   end
 
   def show
-    genre = params["chosen_genre"].capitalize
-    @chosen_story = Story.find_by_genre(genre)
-    @first_tweets = get_tweets(params["user_name1"], 9)
-    @second_tweets = get_tweets(params["user_name2"], 9)
+    @story = Story.find(params[:id])
+    @tweets = Tweet.find()
   end
 
   private
