@@ -3,8 +3,6 @@ module TwitterApi
 
 
   def get_tweets(twittername)
-    p '**************'
-    p twittername
     client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV['CONSUMER_KEY']
       config.consumer_secret     = ENV['CONSUMER_SECRET']
@@ -14,7 +12,7 @@ module TwitterApi
 
     strings = []
     tweets = client.user_timeline(twittername)
-    raise ArgumentError, 'Please input Twitter handle with at least 10 tweets.' unless tweets.length >= 10
+    tweets = JSON.parse(tweets)
 
     tweets.sample(9).each do |tweet|
       remove_urls_hagtags = /(https?:\/\/)?([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})([\/\w\.-]*)*\/?|@\w+|#\w+/
@@ -24,6 +22,7 @@ module TwitterApi
       strings << punc_removed if punc_removed.length > 2
     end
 
+    p '**************'
     p strings
   end
 end

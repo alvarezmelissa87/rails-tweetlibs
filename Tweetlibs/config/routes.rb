@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # get '/story', :to => 'story#show'
 
   resources :story, only: [:index, :create, :show] do
-    resources :tweet, only: [:index, :show, :create]
+    resources :tweet, only: [:index, :show, :create, :update]
   end
 
 end
