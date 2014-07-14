@@ -6,11 +6,6 @@ class TweetController < ApplicationController
   end
 
   def create
-    #get tweets for username 1
-    #get tweets for username 2
-    #check that those were valid twitter calls
-    #if yes save the tweet objact and redirect to #show
-    #else redirect to index
     @story = Story.find(tweet_params[:story_id])
     if make_tweet_object.save
       redirect_to story_tweet_path(@story, @tweet)
@@ -25,12 +20,14 @@ class TweetController < ApplicationController
   end
 
   def update
+    @tweet = Tweet.find(params[:id]).update_attributes(selected_tweets1: params[:selected_tweets1], selected_tweets2: params[:selected_tweets2])
+    redirect_to story_path(Story.find(params[:story_id]))
   end
 
   private
 
   def tweet_params
-    params.require(:tweet).permit(:story_id, :twitter_name1, :twitter_name2, :tweet_array1, :tweet_array2, :selected_tweets1, :selected_tweets2)
+    params.require(:tweet).permit(:story_id, :twitter_name1, :twitter_name2, :tweet_array1, :tweet_array2, :selected_tweets1 => [], :selected_tweets2 => [])
   end
 
   def make_tweet_object
