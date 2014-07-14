@@ -12,7 +12,6 @@ module TwitterApi
 
     strings = []
     tweets = client.user_timeline(twittername)
-    # tweets = JSON.parse(tweets)
 
     tweets.sample(9).each do |tweet|
       remove_urls_hagtags = /(https?:\/\/)?([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})([\/\w\.-]*)*\/?|@\w+|#\w+/

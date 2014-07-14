@@ -21,8 +21,9 @@ class TweetController < ApplicationController
 
   def update
     @tweets = Tweet.find(params[:id])
-    selection1 = [params[@tweets][:st1_1], params[:st1_2], params[:st1_1]]
-    @tweet.update_attributes(selected_tweets1: selection1)
+    selection1 = [params['selected'][:st1_1], params['selected'][:st1_2], params['selected'][:st1_3]]
+    selection2 = [params['selected'][:st2_1], params['selected'][:st2_2], params['selected'][:st2_3]]
+    @tweets.update_attributes(selected_tweets1: selection1, selected_tweets2: selection2)
     redirect_to story_path(Story.find(params[:story_id]))
   end
 
@@ -36,7 +37,7 @@ class TweetController < ApplicationController
     @tweet = Tweet.new(story_id: tweet_params[:story_id],
       twitter_name1: tweet_params[:twitter_name1],
       twitter_name2: tweet_params[:twitter_name2],
-      tweet_array1: get_tweets(tweet_params[:twitter_name1]), 
+      tweet_array1: get_tweets(tweet_params[:twitter_name1]),
       tweet_array2: get_tweets(tweet_params[:twitter_name2]))
   end
 end
