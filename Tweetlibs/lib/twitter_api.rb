@@ -22,8 +22,7 @@ module TwitterApi
       strings << punc_removed if punc_removed.length > 2
     end
 
-    p '**************'
-    p strings
+    strings
   end
 end
 
