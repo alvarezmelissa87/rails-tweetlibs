@@ -1,10 +1,10 @@
 <h3>Select the tweets you would like to use in your story</h3>
 <%= form_for [@story,@tweets], url: {action: 'update'} do |f| %>
-  <%= select @tweets, :st1_1, @tweets.tweet_array1[0..2] %>
-  <%= select @tweets, :st1_2, @tweets.tweet_array1[3..5] %>
-  <%= select @tweets, :st1_3, @tweets.tweet_array1[6..8] %>
-  <%= select @tweets, :st2_1, @tweets.tweet_array2[0..2] %>
-  <%= select @tweets, :st2_2, @tweets.tweet_array2[3..5] %>
-  <%= select @tweets, :st2_3, @tweets.tweet_array2[6..8] %>
+  <%= select 'selected', :st1_1, @tweets.tweet_array1[0..2] %>
+  <%= select 'selected', :st1_2, @tweets.tweet_array1[3..5] %>
+  <%= select 'selected', :st1_3, @tweets.tweet_array1[6..8] %>
+  <%= select 'selected', :st2_1, @tweets.tweet_array2[0..2] %>
+  <%= select 'selected', :st2_2, @tweets.tweet_array2[3..5] %>
+  <%= select 'selected', :st2_3, @tweets.tweet_array2[6..8] %>
 <%= f.submit %>
-<% end %>
+<% end %>   
