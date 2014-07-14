@@ -16,6 +16,7 @@ class StoryController < ApplicationController
   def show
     @story = Story.find(params[:id])
     @o_story = Original_story.find(@story.original_story_id)
+    @tweets = Tweet.find_by_story_id(@story.id)
   end
 
   private
