@@ -1,0 +1,9 @@
+<%= form_for [@story,@tweets], url: {action: 'update'} do |f| %>
+<%= f.label @tweets.tweet_array1[0] %>
+<%= f.radio_button(@tweets, tweet_array1[0], select_tweets1)  %>
+<%= f.label @tweets.tweet_array1[1] %>
+<%= f.radio_button @tweets.select_tweets1 %>
+<%= f.label @tweets.tweet_array1[2] %>
+<%= f.radio_button @tweets.select_tweets1 %>  
+<%= f.submit %>
+<% end %>

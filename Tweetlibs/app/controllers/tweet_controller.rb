@@ -15,11 +15,16 @@ class TweetController < ApplicationController
     if make_tweet_object.save
       redirect_to story_tweet_path(@story, @tweet)
     else
-      render 'index'
+      redirect_to story_tweet_index_path(@story)
     end
   end
 
   def show
+    @story = Story.find(params[:story_id])
+    @tweets = Tweet.find(params[:id])
+  end
+
+  def update
   end
 
   private
