@@ -34,4 +34,5 @@ class StoryController < ApplicationController
     user1_replace.each { |key,value| story.content.sub!(key.to_s, value) }
     user2_replace.each { |key,value| story.content.sub!(key.to_s, value) }
     story.content
+  end
 end
