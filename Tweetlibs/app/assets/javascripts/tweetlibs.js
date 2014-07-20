@@ -10,11 +10,6 @@ function askForTwitternames(e, data, status, xhr) {
 }
 
 function showTweets(e, data, status, xhr) {
-  $('body').clear
+  $('body').clear()
   $('#new_tweet').append(xhr.responseText)
 }
-// $(document).ready(ajax)
-//   $("#_post").on("ajax:success", (e, data, status, xhr) ->
-//     $("#new_post").append xhr.responseText
-//   ).on "ajax:error", (e, xhr, status, error) ->
-//     $("#new_post").append "<p>ERROR</p>"
