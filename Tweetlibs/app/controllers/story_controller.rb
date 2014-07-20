@@ -20,8 +20,10 @@ class StoryController < ApplicationController
     update_story_content
   end
 
-  def delete
-
+  def destroy
+    Tweet.find_by_story_id(params[:id]).delete
+    Story.find(params[:id]).delete
+    redirect_to root_path
   end
 
   private

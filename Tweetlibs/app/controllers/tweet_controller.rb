@@ -1,4 +1,4 @@
-xclass TweetController < ApplicationController
+class TweetController < ApplicationController
   include TwitterApi
 
   def index
