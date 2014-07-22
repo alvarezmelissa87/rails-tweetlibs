@@ -17,9 +17,6 @@ class TweetController < ApplicationController
   def show
     @story = Story.find(params[:story_id])
     @tweets = Tweet.find(params[:id])
-    respond_to do |format|
-      respond_to :html {render 'show'}
-    end
   end
 
   def update
