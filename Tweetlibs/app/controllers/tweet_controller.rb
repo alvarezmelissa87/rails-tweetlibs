@@ -3,6 +3,7 @@ class TweetController < ApplicationController
 
   def index
     @tweet = Tweet.new
+    render :layout => false
   end
 
   def create

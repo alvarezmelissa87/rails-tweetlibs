@@ -1,13 +1,13 @@
 $(document).ready(bindListeners)
 
 function bindListeners() {
-  $('.content').on('ajax:success', '#new_story', askForTwitternames)
-  $('.content').on('ajax:success', '#new_tweet', showTweets)
+  $('.container').one('ajax:success', '#new_story', askForTwitternames)
+  $('.container').one('ajax:success', '#new_tweet', showTweets)
 }
 
 function askForTwitternames(e, data, status, xhr) {
+
   $('.bottom').append(xhr.responseText)
-  // removeListeners()
 }
 
 // function showTweets(e) {
