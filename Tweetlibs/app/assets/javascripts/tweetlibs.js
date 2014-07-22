@@ -1,30 +1,33 @@
 $(document).ready(bindListeners)
 
 function bindListeners() {
-  $('.container').one('ajax:success', '#new_story', askForTwitternames)
-  $('.container').one('ajax:success', '#new_tweet', showTweets)
+  $('.container').on('ajax:success', '#new_story', askForTwitternames)
+  $('.container').on('ajax:success ajax:send', '#new_tweet', tweetHelper)
+  $('.container').on('ajax:success', '.edit_tweet', showStory)
 }
 
 function askForTwitternames(e, data, status, xhr) {
-
   $('.bottom').append(xhr.responseText)
 }
 
-// function showTweets(e) {
-//   debugger
-//   e.preventDefault()
-//   var ajaxCall = $.ajax({
-//     url: e.currentTarget.action,
-//     type: 'POST'
-//   })
-//   ajaxCall.done(displayContent)
-// }
-
-function showTweets(e, data, status, xhr) {
-  $('#new_tweet').append(xhr.responseText)
+function tweetHelper(e, data, status, xhr) {
+  if (e.type === 'ajax:send') {
+    loading()
+  } else {
+    showTweets(e, data, status, xhr)
+  }
 }
 
-// function removeListeners() {
-//   $('.content').off('ajax:success', '#new_story', askForTwitternames)
-//   // $('.content').off('submit', '#new_tweet', showTweets)
-// }
+function loading(e, data, status, xhr) {
+  $('.bottom').append('Loading tweets...')
+}
+
+function showTweets(e, data, status, xhr) {
+  $('.container').empty()
+  $('.container').append(xhr.responseText)
+}
+
+function showStory(e, data, status, xhr) {
+  $('.container').empty()
+  $('.container').append(xhr.responseText) 
+}
