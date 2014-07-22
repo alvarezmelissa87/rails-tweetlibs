@@ -3,16 +3,14 @@ $(document).ready(bindListeners)
 function bindListeners() {
   $('.container').on('ajax:success', '#new_story', askForTwitternames)
   $('.container').on('ajax:success ajax:send', '#new_tweet', tweetHelper)
-  // $('.container').on('ajax:send', '#new_tweet', loading)
+  $('.container').on('ajax:success', '.edit_tweet', showStory)
 }
 
 function askForTwitternames(e, data, status, xhr) {
   $('.bottom').append(xhr.responseText)
-  // $('.container').off('ajax:success', '#new_story', askForTwitternames)
 }
 
 function tweetHelper(e, data, status, xhr) {
-  debugger
   if (e.type === 'ajax:send') {
     loading()
   } else {
@@ -25,10 +23,11 @@ function loading(e, data, status, xhr) {
 }
 
 function showTweets(e, data, status, xhr) {
-  console.log('balls')
   $('.container').empty()
   $('.container').append(xhr.responseText)
-  $('.container').off('ajax:send', '#new_tweet', loading)
-  $('.container').off('ajax:success', '#new_tweet', showTweets)
 }
 
+function showStory(e, data, status, xhr) {
+  $('.container').empty()
+  $('.container').append(xhr.responseText) 
+}
