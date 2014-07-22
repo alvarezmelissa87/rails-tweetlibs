@@ -2,29 +2,20 @@ $(document).ready(bindListeners)
 
 function bindListeners() {
   $('.container').one('ajax:success', '#new_story', askForTwitternames)
+  $('.container').one('ajax:before', '#new_tweet', loading)
   $('.container').one('ajax:success', '#new_tweet', showTweets)
 }
 
 function askForTwitternames(e, data, status, xhr) {
-
   $('.bottom').append(xhr.responseText)
 }
 
-// function showTweets(e) {
-//   debugger
-//   e.preventDefault()
-//   var ajaxCall = $.ajax({
-//     url: e.currentTarget.action,
-//     type: 'POST'
-//   })
-//   ajaxCall.done(displayContent)
-// }
-
-function showTweets(e, data, status, xhr) {
-  $('#new_tweet').append(xhr.responseText)
+function loading() {
+  $('.bottom').html('Loading tweets...')
 }
 
-// function removeListeners() {
-//   $('.content').off('ajax:success', '#new_story', askForTwitternames)
-//   // $('.content').off('submit', '#new_tweet', showTweets)
-// }
+function showTweets(e, data, status, xhr) {
+  $('.container').empty()
+  $('.container').append(xhr.responseText)
+}
+
