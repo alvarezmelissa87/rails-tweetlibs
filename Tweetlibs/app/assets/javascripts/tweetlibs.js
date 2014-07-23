@@ -8,7 +8,6 @@ function bindListeners() {
 }
 
 function askForTwitternames(e, data, status, xhr) {
-  debugger
   $('.bottom').append(xhr.responseText)
 }
 
