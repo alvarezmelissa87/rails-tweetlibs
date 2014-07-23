@@ -4,9 +4,11 @@ function bindListeners() {
   $('.container').on('ajax:success', '#new_story', askForTwitternames)
   $('.container').on('ajax:success ajax:send', '#new_tweet', tweetHelper)
   $('.container').on('ajax:success', '.edit_tweet', showStory)
+  $('.container').on('ajax:success', '.home', goHome)
 }
 
 function askForTwitternames(e, data, status, xhr) {
+  debugger
   $('.bottom').append(xhr.responseText)
 }
 
@@ -30,4 +32,10 @@ function showTweets(e, data, status, xhr) {
 function showStory(e, data, status, xhr) {
   $('.container').empty()
   $('.container').append(xhr.responseText) 
+}
+
+function goHome(e, data, status, xhr) {
+  $('body').empty()
+  $('body').append(xhr.responseText)
+  bindListeners()
 }

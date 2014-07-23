@@ -7,6 +7,11 @@ class StoryController < ApplicationController
     @story = Story.new
   end
 
+  def home
+    @story = Story.new
+    render :layout => false
+  end
+
   def create
     @story = Story.create(story_params)
     @story.update_attributes(original_story_id: Original_story.find_by_genre(@story.genre).id)
@@ -18,12 +23,13 @@ class StoryController < ApplicationController
     @o_story = Original_story.find(@story.original_story_id)
     @tweets = Tweet.find_by_story_id(@story.id)
     update_story_content
+    render :layout => false
   end
 
   def destroy
     Tweet.find_by_story_id(params[:id]).delete
     Story.find(params[:id]).delete
-    redirect_to root_path
+    redirect_to story_home_path, status: 303
   end
 
   private

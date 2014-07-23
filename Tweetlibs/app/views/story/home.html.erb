@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Tweet<i class="fa fa-twitter"></i>Libs</h1>
+  <div class="intro">
+    <h2>Ever wanted to hear what a celebrity would say in a ridiculous situation?</h2>
+    <h2>Now you can! Just choose a story and two handles and watch the tweets become dialogue!</h2>
+  </div>
+  <div class="bottom">
+    <%= form_for @story, url: {action: "create"}, remote: true do |f| %>
+    <%= f.label "Science Fiction" %>
+    <%= f.radio_button :genre, "Science Fiction" %>
+    <%= f.label "Romance" %>
+    <%= f.radio_button :genre, "Romance" %>
+    <%= f.label "Horror" %>
+    <%= f.radio_button :genre, "Horror" %>
+    <%= f.submit %>
+    <% end %>
+  </div>
+</div>
