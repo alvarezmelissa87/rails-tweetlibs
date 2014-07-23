@@ -8,7 +8,7 @@
 
 
 def read_in_story_file(file_path) #file_path should be a string
-  file = File.new(file_path)
+  file = File.new(File.join(Rails.root, 'db', file_path))
   story_array = file.readlines
   p title = story_array[0].chomp
   p genre = story_array[1].chomp
@@ -16,6 +16,6 @@ def read_in_story_file(file_path) #file_path should be a string
   Original_story.create(:title => title, :genre => genre, :content => story.join(""))
 end
 
-read_in_story_file("/Users/Melissa/Desktop/rails/rails-tweetlibs/Tweetlibs/db/horror_story.txt")
-read_in_story_file('/Users/Melissa/Desktop/rails/rails-tweetlibs/Tweetlibs/db/romance.txt')
-read_in_story_file('/Users/Melissa/Desktop/rails/rails-tweetlibs/Tweetlibs/db/spaceopera1.txt')
+read_in_story_file("horror_story.txt")
+read_in_story_file('romance.txt')
+read_in_story_file('spaceopera1.txt')
