@@ -16,8 +16,8 @@ module TwitterApi
       remove_punctuations = /(\.|!|:|--|-)?$/
       remove_retweets = /(RT\s:)/
       urls_removed = tweet.text.gsub(remove_urls_hagtags, "").strip
-      p punc_removed = urls_removed.gsub(remove_punctuations, "").strip
-      p rts_removed = punc_removed.gsub(remove_retweets, "").strip
+      punc_removed = urls_removed.gsub(remove_punctuations, "").strip
+      rts_removed = punc_removed.gsub(remove_retweets, "").strip
       strings << rts_removed if rts_removed.length > 2
     end
 
