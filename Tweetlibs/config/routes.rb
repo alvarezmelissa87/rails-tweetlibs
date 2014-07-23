@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   # post '/', :to => 'story#show'
   # get '/story', :to => 'story#show'
   get '/story/home' => 'story#home'
-  get '/story/bye' => 'story#bye'
 
   resources :story, only: [:index, :create, :show, :destroy] do
     resources :tweet, only: [:index, :show, :create, :update]
