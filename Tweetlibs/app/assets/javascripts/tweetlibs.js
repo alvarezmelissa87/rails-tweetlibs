@@ -1,10 +1,10 @@
 $(document).ready(bindListeners)
 
 function bindListeners() {
-  $('.container').on('ajax:success', '#new_story', askForTwitternames)
-  $('.container').on('ajax:success ajax:send', '#new_tweet', tweetHelper)
-  $('.container').on('ajax:success', '.edit_tweet', showStory)
-  $('.container').on('ajax:success', '.home', goHome)
+  $('.container').one('ajax:success', '#new_story', askForTwitternames)
+  $('.container').one('ajax:success ajax:send ajax:error', '#new_tweet', tweetHelper)
+  $('.container').one('ajax:success', '.edit_tweet', showStory)
+  $('.container').one('ajax:success', '.home', goHome)
 }
 
 function askForTwitternames(e, data, status, xhr) {
@@ -14,13 +14,26 @@ function askForTwitternames(e, data, status, xhr) {
 function tweetHelper(e, data, status, xhr) {
   if (e.type === 'ajax:send') {
     loading()
+  } else if (e.type === 'ajax:error') {
+    tweetError(e, data, status, xhr)
   } else {
     showTweets(e, data, status, xhr)
   }
 }
 
 function loading(e, data, status, xhr) {
-  $('.bottom').append('Loading tweets...')
+  $('.bottom p').text('Loading tweets...')
+}
+
+function tweetError(e, data, status, xhr) {
+  $('.bottom p').text('Please enter valid Twitter names and try again.')
+  clearForm()
+  $('.container').one('ajax:success ajax:send ajax:error', '#new_tweet', tweetHelper)
+}
+
+function clearForm() {
+  $('#tweet_twitter_name1').val('')
+  $('#tweet_twitter_name2').val('')
 }
 
 function showTweets(e, data, status, xhr) {
