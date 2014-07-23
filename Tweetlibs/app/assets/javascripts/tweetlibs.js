@@ -5,6 +5,7 @@ function bindListeners() {
   $('.container').on('ajax:success ajax:send', '#new_tweet', tweetHelper)
   $('.container').on('ajax:success', '.edit_tweet', showStory)
   $('.container').on('ajax:success', '.home', goHome)
+  $(window).unload(eraseObjects)
 }
 
 function askForTwitternames(e, data, status, xhr) {
@@ -37,4 +38,8 @@ function goHome(e, data, status, xhr) {
   $('body').empty()
   $('body').append(xhr.responseText)
   bindListeners()
+}
+
+function eraseObjects() {
+  $.get('story/bye')
 }

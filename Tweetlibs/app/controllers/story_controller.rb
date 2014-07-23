@@ -32,6 +32,10 @@ class StoryController < ApplicationController
     redirect_to story_home_path, status: 303
   end
 
+  def bye
+    p params
+  end
+
   private
 
   def story_params
