@@ -27,9 +27,11 @@ module TwitterApi
     end
 
     def format_tweet(tweet, strings)
-      tweet = remove_url(tweet)
-      tweet = remove_punctuation(tweet)
-      strings << remove_retweet(tweet)
+      strings << call_tweet_removers(tweet)
+    end
+
+    def call_tweet_removers(tweet)
+      formatted_tweet = remove_retweet(remove_punctuation(remove_url(tweet)))
     end
 
     def remove_url(tweet)
