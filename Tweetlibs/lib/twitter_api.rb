@@ -5,9 +5,8 @@ module TwitterApi
   end
 
   def get_tweets(twittername)
-    client = self.make_client
     strings = []
-    tweets = client.user_timeline(twittername)
+    tweets = self.make_client.user_timeline(twittername)
     self.process_tweets(tweets, strings)
   end
 
