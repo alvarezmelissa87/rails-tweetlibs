@@ -1,17 +1,42 @@
+body {
+  background-image: url("/assets/grass.png");
+  background-size: cover;
+}
+
+@font-face {
+  font-family: KBZipaDeeDooDah; src: url('KBZipaDeeDooDah.ttf');
+  }
+
+@font-face {
+  font-family: KBZipaDeeDooDah; font-weight: bold; src: url('KBZipaDeeDooDah.ttf');
+   }
 
 h1 {
+  font-family: KBZipaDeeDooDah, sans-serif;
   text-align: center;
-  font-size: 4em;
+  font-size: 7em;
+  color: white;
 }
 
 .intro {
   padding-left: 3em;
   text-align: center;
+  font-family: KBZipaDeeDooDah, sans-serif;
+  margin-bottom: 8%;
+  color: #fafafa;
+}
+
+input {
+  display: inline;
 }
 
 .bottom {
-  background-color: #00BFFF;
-  padding: 3em 5em 10em 5em;
+  /*background-color: #00BFFF;*/
+  padding: 3em 5em 15em 5em;
+}
+
+.new_story {
+  color: #fafafa;
 }
 
 a {
@@ -21,6 +46,32 @@ a {
 
 label {
   font-size: 1.20em;
+  font-family: KBZipaDeeDooDah, sans-serif;
+}
+
+.fa {
+  color: #FFC469;
+}
+
+.story {
+  width: 60%;
+  text-align: center;
+  font-size: 1.25em;
+  background-color: #fafafa;
+  padding: 3%;
+  margin-left: 20%;
+  border-radius: 20%;
+}
+
+.home {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #fafafa;
+}
+
+.new_tweets {
+  display: inline;
+  margin: 3%;
 }
 
 
