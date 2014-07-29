@@ -31,11 +31,24 @@ input {
 }
 
 .bottom {
-  /*background-color: #00BFFF;*/
-  padding: 3em 5em 15em 5em;
+    padding: 3em 5em 15em 5em;
 }
 
 .new_story {
+  color: #fafafa;
+  font-size: 1.5em;
+}
+
+.new_story input[type="submit"] {
+  font-size: 3em;
+}
+
+.new_story input[type="radio"] {
+  margin-right: 1.5em;
+}
+
+h3 {
+  font-family: KBZipaDeeDooDah, sans-serif;
   color: #fafafa;
 }
 
