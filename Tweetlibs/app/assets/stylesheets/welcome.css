@@ -22,7 +22,7 @@ h1 {
   padding-left: 3em;
   text-align: center;
   font-family: KBZipaDeeDooDah, sans-serif;
-  margin-bottom: 8%;
+  margin-bottom: 3%;
   color: #fafafa;
 }
 
@@ -31,12 +31,41 @@ input {
 }
 
 .bottom {
-  /*background-color: #00BFFF;*/
-  padding: 3em 5em 15em 5em;
+    padding: 3em 5em 15em 5em;
+    text-align:center;
 }
 
-.new_story {
+.bottom p {
+  font-family: KBZipaDeeDooDah, sans-serif;
+  color: white;
+}
+
+.new_story, .new_tweet {
   color: #fafafa;
+  font-size: 1.5em;
+}
+
+input[type="submit"] {
+  font-size: 1em;
+  padding: 0.5%;
+  background-color: #dcdcdc;
+  border: 1px solid #666;
+  color: #0D4F8B;
+  text-decoration:none;
+  border-radius: 15%;
+  font-family: KBZipaDeeDooDah, sans-serif;
+  margin-left: 3%;
+}
+
+.new_story input[type="radio"] {
+  margin-right: 1.5em;
+}
+
+h3 {
+  font-family: KBZipaDeeDooDah, sans-serif;
+  color: #fafafa;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 a {
@@ -55,23 +84,45 @@ label {
 
 .story {
   width: 60%;
-  text-align: center;
-  font-size: 1.25em;
-  background-color: #fafafa;
-  padding: 3%;
+  background: rgba(102, 92, 92, 0.5);
   margin-left: 20%;
-  border-radius: 20%;
+  border-radius: 5%;
+}
+
+.story_text {
+  color: #fafafa;
+  text-align: center;
+  font-size: 1.6em;
+  padding: 5%;
+  font-family: KBZipaDeeDooDah, sans-serif;
 }
 
 .home {
   text-decoration: none;
   font-size: 1.5em;
+  background: rgba(230, 225, 225, 0.5);
   color: #fafafa;
+  font-family: KBZipaDeeDooDah, sans-serif;
+  position: fixed;
+  left: 5%;
+  bottom: 7%;
+  padding:1%;
+  border-radius: 15%;
 }
 
-.new_tweets {
-  display: inline;
-  margin: 3%;
+#tweet_twitter_name1 {
+  margin-right: 10%;
+}
+
+.select_tweets {
+  margin-left: 20%;
+  margin-right: 20%;
+  width: 50%;
+}
+
+.edit_tweet select{
+  font-size: 1.2em;
+  max-width: 100%;
 }
 
 
