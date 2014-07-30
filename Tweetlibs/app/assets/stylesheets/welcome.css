@@ -81,14 +81,14 @@ label {
   width: 60%;
   background: rgba(102, 92, 92, 0.5);
   margin-left: 20%;
-  border-radius: 20%;
+  border-radius: 5%;
 }
 
 .story_text {
   color: #fafafa;
   text-align: center;
   font-size: 1.6em;
-  padding: 3%;
+  padding: 5%;
   font-family: KBZipaDeeDooDah, sans-serif;
 }
 
@@ -98,9 +98,9 @@ label {
   background: rgba(230, 225, 225, 0.5);
   color: #fafafa;
   font-family: KBZipaDeeDooDah, sans-serif;
-  position: absolute;
+  position: fixed;
   left: 5%;
-  bottom: 5%;
+  bottom: 7%;
   padding:1%;
   border-radius: 15%;
 }
