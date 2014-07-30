@@ -35,6 +35,11 @@ input {
     text-align:center;
 }
 
+.bottom p {
+  font-family: KBZipaDeeDooDah, sans-serif;
+  color: white;
+}
+
 .new_story, .new_tweet {
   color: #fafafa;
   font-size: 1.5em;
