@@ -1,0 +1,149 @@
+body {
+  background-image: url("/assets/grass.png");
+  background-size: cover;
+}
+
+@font-face {
+  font-family: KBZipaDeeDooDah; src: url('KBZipaDeeDooDah.ttf');
+  }
+
+@font-face {
+  font-family: KBZipaDeeDooDah; font-weight: bold; src: url('KBZipaDeeDooDah.ttf');
+   }
+
+h1 {
+  font-family: KBZipaDeeDooDah, sans-serif;
+  text-align: center;
+  font-size: 7em;
+  color: white;
+}
+
+.intro {
+  padding-left: 3em;
+  text-align: center;
+  font-family: KBZipaDeeDooDah, sans-serif;
+  margin-bottom: 3%;
+  color: #fafafa;
+}
+
+input {
+  display: inline;
+}
+
+.bottom {
+    padding: 3em 5em 15em 5em;
+    text-align:center;
+}
+
+.bottom p {
+  font-family: KBZipaDeeDooDah, sans-serif;
+  color: white;
+}
+
+.new_story, .new_tweet {
+  color: #fafafa;
+  font-size: 1.5em;
+}
+
+input[type="submit"] {
+  font-size: 1em;
+  padding: 0.5%;
+  background-color: #dcdcdc;
+  border: 1px solid #666;
+  color: #0D4F8B;
+  text-decoration:none;
+  border-radius: 15%;
+  font-family: KBZipaDeeDooDah, sans-serif;
+  margin-left: 3%;
+}
+
+.new_story input[type="radio"] {
+  margin-right: 1.5em;
+}
+
+h3 {
+  font-family: KBZipaDeeDooDah, sans-serif;
+  color: #fafafa;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  text-align: center;
+}
+
+label {
+  font-size: 1.20em;
+  font-family: KBZipaDeeDooDah, sans-serif;
+}
+
+.fa {
+  color: #FFC469;
+}
+
+.story {
+  width: 60%;
+  background: rgba(102, 92, 92, 0.5);
+  margin-left: 20%;
+  border-radius: 5%;
+}
+
+.story_text {
+  color: #fafafa;
+  text-align: center;
+  font-size: 1.6em;
+  padding: 5%;
+  font-family: KBZipaDeeDooDah, sans-serif;
+}
+
+.home {
+  text-decoration: none;
+  font-size: 1.5em;
+  background: rgba(230, 225, 225, 0.5);
+  color: #fafafa;
+  font-family: KBZipaDeeDooDah, sans-serif;
+  position: fixed;
+  left: 5%;
+  bottom: 7%;
+  padding:1%;
+  border-radius: 15%;
+}
+
+#tweet_twitter_name1 {
+  margin-right: 10%;
+}
+
+.select_tweets {
+  margin-left: 20%;
+  margin-right: 20%;
+  width: 50%;
+}
+
+.edit_tweet select{
+  font-size: 1.2em;
+  max-width: 100%;
+}
+
+
+@font-face {
+  font-family: KBZipaDeeDooDah;
+  src: url("/assets/images/KBZipaDeeDooDah.ttf");
+  font-weight: 400;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
