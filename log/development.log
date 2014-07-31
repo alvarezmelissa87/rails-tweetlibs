@@ -48708,3 +48708,122 @@ Started GET "/story/home" for 127.0.0.1 at 2014-07-30 16:53:26 -0700
 Processing by StoryController#home as JS
   Rendered story/home.html.erb (2.5ms)
 Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-07-31 08:10:49 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (6.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StoryController#index as HTML
+  Rendered story/index.html.erb within layouts/application (265.4ms)
+Completed 200 OK in 341ms (Views: 325.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/story.css?body=1" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started GET "/assets/welcome.css?body=1" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started GET "/assets/tweetlibs.js?body=1" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started GET "/assets/story.js?body=1" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started GET "/assets/grass.png" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started GET "/assets/KBZipaDeeDooDah.ttf" for 127.0.0.1 at 2014-07-31 08:10:50 -0700
+
+
+Started POST "/story" for 127.0.0.1 at 2014-07-31 08:11:19 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StoryController#create as JS
+  Parameters: {"utf8"=>"✓", "story"=>{"genre"=>"Horror"}, "commit"=>"Create Story"}
+  [1m[35m (0.9ms)[0m  BEGIN
+  [1m[36mSQL (19.0ms)[0m  [1mINSERT INTO "stories" ("created_at", "genre", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-07-31 15:11:19.251359"], ["genre", "Horror"], ["updated_at", "2014-07-31 15:11:19.251359"]]
+  [1m[35m (24.0ms)[0m  COMMIT
+  [1m[36mOriginal_story Load (0.8ms)[0m  [1mSELECT  "original_stories".* FROM "original_stories"  WHERE "original_stories"."genre" = 'Horror' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "stories" SET "original_story_id" = $1, "updated_at" = $2 WHERE "stories"."id" = 57[0m  [["original_story_id", 1], ["updated_at", "2014-07-31 15:11:19.310643"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/story/57/tweet
+Completed 302 Found in 85ms (ActiveRecord: 54.2ms)
+
+
+Started GET "/story/57/tweet" for 127.0.0.1 at 2014-07-31 08:11:19 -0700
+Processing by TweetController#index as JS
+  Parameters: {"story_id"=>"57"}
+  Rendered tweet/index.html.erb (205.4ms)
+Completed 200 OK in 218ms (Views: 212.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/story/57/tweet" for 127.0.0.1 at 2014-07-31 08:11:26 -0700
+Processing by TweetController#create as JS
+  Parameters: {"utf8"=>"✓", "tweet"=>{"twitter_name1"=>"tea", "twitter_name2"=>"boringjamesmilner", "story_id"=>"57"}, "commit"=>"submit", "story_id"=>"57"}
+  [1m[36mStory Load (0.3ms)[0m  [1mSELECT  "stories".* FROM "stories"  WHERE "stories"."id" = $1 LIMIT 1[0m  [["id", 57]]
+Completed 500 Internal Server Error in 1046ms
+
+Twitter::Error::Forbidden (Unable to verify your credentials):
+  lib/twitter_api.rb:9:in `get_tweets'
+  app/controllers/tweet_controller.rb:42:in `make_tweet_object'
+  app/controllers/tweet_controller.rb:11:in `create'
+
+
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (15.4ms)
+
+
+Started POST "/story/57/tweet" for 127.0.0.1 at 2014-07-31 08:11:37 -0700
+Processing by TweetController#create as JS
+  Parameters: {"utf8"=>"✓", "tweet"=>{"twitter_name1"=>"beaglebets", "twitter_name2"=>"tea", "story_id"=>"57"}, "commit"=>"submit", "story_id"=>"57"}
+  [1m[35mStory Load (0.2ms)[0m  SELECT  "stories".* FROM "stories"  WHERE "stories"."id" = $1 LIMIT 1  [["id", 57]]
+Completed 500 Internal Server Error in 174ms
+
+Twitter::Error::Forbidden (Unable to verify your credentials):
+  lib/twitter_api.rb:9:in `get_tweets'
+  app/controllers/tweet_controller.rb:42:in `make_tweet_object'
+  app/controllers/tweet_controller.rb:11:in `create'
+
+
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.4ms)
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.6ms)
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (10.6ms)
+
+
+Started POST "/story/57/tweet" for 127.0.0.1 at 2014-07-31 08:11:50 -0700
+Processing by TweetController#create as JS
+  Parameters: {"utf8"=>"✓", "tweet"=>{"twitter_name1"=>"beaglebets", "twitter_name2"=>"teabait", "story_id"=>"57"}, "commit"=>"submit", "story_id"=>"57"}
+  [1m[36mStory Load (0.2ms)[0m  [1mSELECT  "stories".* FROM "stories"  WHERE "stories"."id" = $1 LIMIT 1[0m  [["id", 57]]
+Completed 500 Internal Server Error in 175ms
+
+Twitter::Error::Forbidden (Unable to verify your credentials):
+  lib/twitter_api.rb:9:in `get_tweets'
+  app/controllers/tweet_controller.rb:42:in `make_tweet_object'
+  app/controllers/tweet_controller.rb:11:in `create'
+
+
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.text.erb (0.6ms)
+  Rendered /Users/stupo/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb (10.7ms)
